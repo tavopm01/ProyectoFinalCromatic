@@ -5,7 +5,12 @@ var $RegistroSize = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var $auxiliar = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var $operaciones = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var $opcion = "";
-$RegistoSize = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+const $aceite = 13;
+const $agua = 10;
+const $oleo = 12;
+/*********Comienza peticion de datos pared***************** */
+
 $WallToPaint =  parseFloat(prompt("Cromatic Paint \n Cuantas paredes desea pintar?"));
 $Size = prompt ("Favor ingrese la base y la altura de la pared # en el formato Base,Altura Ejem. 5,2");
 $operaciones[0] = $Size.substring(0, $Size.indexOf(","));
@@ -27,7 +32,27 @@ $opcion = prompt("La Pared # , Tiene puertas?");
         $operaciones[5] = $Size.substring($Size.indexOf(",")+1,$Size.length);
         $auxiliar[2] =  parseFloat($operaciones[4]) * parseFloat($operaciones[5]);
     }
-$RegistroSize = $auxiliar[0]-$auxiliar[1]-$auxiliar[2];
-alert($RegistroSize);
+$RegistroSize[1] = $auxiliar[0]-$auxiliar[1]-$auxiliar[2];
+alert($RegistroSize[1]);
 
+/*********Termina peticion de datos***************** */
 
+/*********Tipo pintura***************** */
+$opcion = prompt("Que tipo de pintura utilizara? favor de escribir su seleccion Aceite/Agua/Oleo");
+switch($opcion.toUpperCase())
+{
+    case "AGUA":
+        $RegistroSize[0] = $RegistroSize[1] / $agua;
+    break;
+    case "ACEITE":
+        $RegistroSize[0] = $RegistroSize[1] / $aceite;
+    break;
+    case "OLEO":
+        $RegistroSize[0] = $RegistroSize[1] / $oleo;
+    break;
+    default:
+        alert("no es un tipo de pintura validad")
+    break;
+}
+
+alert($RegistroSize[0]);
