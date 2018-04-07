@@ -1,6 +1,0 @@
-<html>
-    <head>
-        <title>Tarea3</title>
-        <script src="quesera.js"></script>
-    </head>
-</html>
