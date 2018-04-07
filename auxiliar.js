@@ -34,6 +34,7 @@ $opcion = prompt("La Pared # , Tiene puertas?");
         $auxiliar[2] =  parseFloat($operaciones[4]) * parseFloat($operaciones[5]);
     }
 $RegistroSize[10] = $RegistroSize[10] +(  $auxiliar[0]-$auxiliar[1]-$auxiliar[2]);
+alert($RegistroSize[10]);
 
 /*********Termina peticion de datos***************** */
 
@@ -104,3 +105,6 @@ $RegistroSize[7] = ($RegistroSize[1]*$agua[3])+($RegistroSize[3]*$agua[2])+$Regi
 }
 
 alert("Metros Cuadrados: " + $RegistroSize[0]+"Cubetas : "+$RegistroSize[1] +" galones : "+$RegistroSize[3]+" extra: "+$RegistroSize[6]+" total: "+$RegistroSize[7]);
+
+
+//<script src="FinalProyect.js"></script> 
