@@ -63,6 +63,13 @@ var quesera = function(){
     table1.border="3";
     table1.width = "50%";
     imprimirtabla = 0;
+    var trx = document.createElement("tr");
+        var tdx = document.createElement("td");
+        tdx.colSpan = "10";
+        tdx.align = "center";
+        tdx.innerHTML = "Tabla de Medidas"; 
+        trx.appendChild(tdx); 
+table1.appendChild(trx);
 
     var trx = document.createElement("tr");
     
@@ -122,8 +129,8 @@ for(i=0;i<(PosicionSalvar);i++){
  trx.appendChild(tdx); 
  table1.appendChild(trx);
     
-    body.appendChild(h1);
-    
+//    body.appendChild(h1);
+    table1.align = "center";
     body.appendChild(table1);
     
 
@@ -209,10 +216,11 @@ function creartabla(arrayaux){
     totalsubcuenta = (cubeta*precios[3])+(galones*precios[2])+cobrogalonpendiente ;
     
     tablea = document.createElement("table");
+    
         
     filacotizacion = document.createElement("tr");
         colummnacotizacion = document.createElement("td");
-        colummnacotizacion.innerHTML = "Cotizacion";
+        colummnacotizacion.innerHTML = "Cotizacion pintura de "+precios[4]+" < - > Mts <sup>2</sup> a cubrir " + totalmetros;
         colummnacotizacion.colSpan = "3";
         colummnacotizacion.align = "center";
         filacotizacion.appendChild(colummnacotizacion);  
@@ -391,9 +399,10 @@ filacotizacion = document.createElement("tr");
     filacotizacion.appendChild(colummnacotizacion);
 tablea.appendChild(filacotizacion);
     //////////// fin tabla
-    body.appendChild(tituloaceite);
+    //body.appendChild(tituloaceite);
     tablea.border="3";
     tablea.width = "50%";
+    tablea.align = "center";
     body.appendChild(tablea);
     //************** */
 }
