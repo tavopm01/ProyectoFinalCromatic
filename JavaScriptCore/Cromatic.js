@@ -6,6 +6,7 @@ var checkbox = document.createElement("checkbox");
 var table1 = document.createElement("table");
 var tituloaceite = document.createElement("h1");
 var tablea = document.createElement("table");
+var divtablas = document.createElement("div");
 var imprimirtabla;
 var arreglar = new Array;
 var totalmetros = 0;
@@ -55,14 +56,17 @@ var quesera = function(){
     table1.remove();
     tituloaceite.remove();
     tablea.remove();
+    divtablas.remove();
     body = document.body;
+    divtablas = document.createElement("div");
+    divtablas.id = "tablasresultado";
     h1 = document.createElement("h1");
     h1.align = "center";
     table1 = document.createElement("table");
+    table1.id = "ParedesTabla";
     h1.innerHTML = "Paredes a pintar";
     table1.border="3";
     table1.width = "50%";
-    imprimirtabla = 0;
     var trx = document.createElement("tr");
         var tdx = document.createElement("td");
         tdx.colSpan = "10";
@@ -71,12 +75,12 @@ var quesera = function(){
         trx.appendChild(tdx); 
 table1.appendChild(trx);
 
-    var trx = document.createElement("tr");
+    trx = document.createElement("tr");
     
     // ciclo correspondiente a las columnas
 
     for(j=0;j<10;j++){
-        var tdx = document.createElement("td");
+        tdx = document.createElement("td");
             switch(j){ 
                 case 0: tdx.innerHTML = "Pared"; break;
                 case 1: tdx.innerHTML = "Altura"; break;
@@ -100,13 +104,13 @@ for(i=0;i<(PosicionSalvar);i++){
     arreglar[9] = (arreglar[1] * arreglar[2]) - (arreglar[4] * arreglar[5]) - (arreglar[7] * arreglar[8]);
     totalmetros = totalmetros + arreglar[9];
     arreglar[9] = arreglar[9] +" Mts <sup>2</sup>";
-    var trx = document.createElement("tr");
+        trx = document.createElement("tr");
 
         // ciclo correspondiente a las columnas
 
         for(j=0;j<10;j++){
 
-            var tdx = document.createElement("td");
+            tdx = document.createElement("td");
 
             tdx.innerHTML = arreglar[j] ;
 
@@ -117,13 +121,13 @@ for(i=0;i<(PosicionSalvar);i++){
     table1.appendChild(trx);
  }
 
- var trx = document.createElement("tr");
- var tdx = document.createElement("td");
+ trx = document.createElement("tr");
+ tdx = document.createElement("td");
  tdx.colSpan = "9";
  tdx.align = "center";
  tdx.innerHTML = "Total de Mts <sup>2</sup>" ;
  trx.appendChild(tdx); 
- var tdx = document.createElement("td");
+ tdx = document.createElement("td");
  tdx.align = "center";
  tdx.innerHTML = totalmetros + " Mts <sup>2</sup>" ;
  trx.appendChild(tdx); 
@@ -131,7 +135,9 @@ for(i=0;i<(PosicionSalvar);i++){
     
 //    body.appendChild(h1);
     table1.align = "center";
-    body.appendChild(table1);
+    divtablas.appendChild(table1);
+    body.appendChild(divtablas);
+//    body.appendChild(table1);
     
 
 }
@@ -170,7 +176,6 @@ var habilitaDeshabilita2 = function(form)
     {
     document.getElementById('AlturaPuerta').disabled = true;
     document.getElementById('BasePuerta').disabled = true;
-    
     }
  
     if (form.CheckPuerta.checked == true)
