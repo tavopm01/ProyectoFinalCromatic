@@ -7,9 +7,12 @@ var table1 = document.createElement("table");
 var tituloaceite = document.createElement("h1");
 var tablea = document.createElement("table");
 var divtablas = document.createElement("div");
+var divResultados = document.createElement("div");
 var imprimirtabla;
 var arreglar = new Array;
 var totalmetros = 0;
+var validacion = 0;
+var mensaje = "";
 
 var $aceite = [13,240.50,432.35,1821.65,"Aceite"];
 var $agua = [10,150,250,999,"Agua"];
@@ -47,7 +50,21 @@ var quesera = function(){
         AW = 0;
         BW = 0;
       }
-
+      if(AP == 0){mensaje = mensaje + "La altura de la pared no puede ser 0 \n";validacion = 1;}
+      if(AB == 0){mensaje = mensaje + "La base de la pared no puede ser 0 \n";validacion = 1;}
+      alert(validacion);
+      if(LD == "SI"){
+      if(AD == "0"){mensaje = mensaje + "La altura de la puerta no puede ser 0 \n";validacion = 1;}
+      if(BD == "0"){mensaje = mensaje + "La base de la puerta no puede ser 0 \n";validacion = 1;}
+    }
+    alert(validacion);
+      if(LW == "SI"){ 
+      if(AW == "0"){mensaje = mensaje + "La altura de la ventana no puede ser 0 \n";validacion = 1;}
+      if(BW == "0"){mensaje = mensaje + "La base de la ventana no puede ser 0 \n";validacion = 1;}
+    }
+    alert(validacion);
+     if (validacion == 0){
+      
     salvar[PosicionSalvar] = [LP,AP,AB,LD,AD,BD,LW,AW,BW];
     PosicionSalvar = PosicionSalvar + 1;
     document.getElementById("LabelNoPared").innerHTML = PosicionSalvar+1;
@@ -138,7 +155,17 @@ for(i=0;i<(PosicionSalvar);i++){
     divtablas.appendChild(table1);
     body.appendChild(divtablas);
 //    body.appendChild(table1);
+
+document.getElementById("AlturaPared").value = 0;
+    document.getElementById("BasePared").value = 0;
+    document.getElementById("AlturaPuerta").value = 0;
+    document.getElementById("BasePuerta").value = 0;
+    document.getElementById("AlturaVentana").value = 0;
+    document.getElementById("BaseVentana").value = 0;
     
+ }else{alert("Alerta!!!! \n "+mensaje);
+ validacion = 0; 
+mensaje = "";}
 
 }
 
