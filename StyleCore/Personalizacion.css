@@ -1,0 +1,58 @@
+body{
+    font-family: Arial;
+}
+
+#tablillaprincipal{
+    margin: 20px auto;
+}
+
+table{
+    background-color: #017d78;
+    border-collapse: collapse;
+    text-align: left;
+    width: 600px;
+    color: white;
+}
+
+th, td{
+    padding: 5px;
+}
+
+thead{
+    background-color: #01055f;
+    border-bottom: solid 5px black;
+    color: white;
+}
+
+tr:nth-child(even){
+    background-color: #06d6cd;
+    color:black;
+}
+
+#paredImagen {
+    position: relative;
+    top: -250px;
+    left: 900px;
+   }
+#paredVentana {
+    position: relative;
+    top: -400px;
+    left: 1080px;
+   }
+#paredPuerta {
+    position: relative;
+    top: -490px;
+    left: 960px;
+   }
+
+#tablillaprincipal{
+    position: relative;
+    top: 0px;
+    left: 100px;
+}
+
+#tablasresultado{
+    position: relative;
+    top: -180px;
+    left: -250px;
+}

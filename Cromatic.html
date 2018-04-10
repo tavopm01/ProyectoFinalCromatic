@@ -1,0 +1,59 @@
+<html >
+    <head>
+        <title>C-R-O-M-A-T-I-C</title>
+        <script src="JavaScriptCore/Cromatic.js"></script>
+        <LINK REL=StyleSheet HREF="StyleCore/Personalizacion.css" TYPE="text/css" MEDIA=screen>
+    </head>
+    <body background="fondo.jpg">
+                <center><IMG SRC="Imagenes/cromo2.jpg" ALT="logo cromatic" width="90%" height="60"></center>
+        <form item-width="50%">
+                <br>
+            <div id="tablillaprincipal">
+            <table >
+                    <thead>
+                        <tr>
+                            <th colspan="9">Paredes a Pintar</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <th>Pared No.</th><th>Altura</th><th>Base</th>
+                    </tr>
+                    <tr>
+                        <td><label name="LabelNoPared" id="LabelNoPared" placeholder="0"value = "1">1</label></td>
+                        <td><input type="text" name="AlturaPared" id="AlturaPared" placeholder="0"value = "0" width="50%"></input></td>
+                        <td><input type="text" name="BasePared" id="BasePared" placeholder="0"value = "0"></input></td>
+                    </tr>
+                    <tr>
+                        <th>Ventana?</th>
+                        <th>Altura</th>
+                        <th>Base</th>
+                    </tr>
+                    <tr>
+                        <form action="" name="VentanaForm">
+                            <td><input type="checkbox" name="CheckVentana" id="CheckVentana" value="ON" onClick="habilitaDeshabilita(this.form)" checked="checked"></td>
+                            <td><input type="text" name="AlturaVentana" id="AlturaVentana" placeholder="0"  value="0"></input></td>
+                            <td><input type="text" name="BaseVentana" id="BaseVentana" placeholder="0"  value="0"></input></td>
+                    </tr>
+                    <tr>
+                        <th>Puerta?</th>
+                        <th>Altura </th>
+                        <th>Base </th>
+                    </tr>
+                    <tr>
+                        <form action="" name="PuertaForm">
+                            <td><input type="checkbox" name="CheckPuerta" id="CheckPuerta" value="ON" onClick="habilitaDeshabilita2(this.form)" checked="checked"></td>
+                            <td><input type="text" name="AlturaPuerta" id="AlturaPuerta" placeholder="0" value="0"></input></td>
+                            <td><input type="text" name="BasePuerta" id="BasePuerta" placeholder="0"  value = "0"></input></td>
+                    </tr>
+            </table>
+        </div>
+        </form>
+        <button onclick="quesera()">Agregar Pared</button>
+        <button onclick="cotizaraceite()">Cotizar Aceite</button>
+        <button onclick="cotizaraagua()">Cotizar Agua</button>
+        <button onclick="cotizaraoleo()">Cotizar Oleo</button>
+        <div id="paredImagen">
+            <img src="Imagenes/paredcolor.JPG" id="pcolor" border="1" alt="imagenconcolor" width="300" height="200">
+        </div>
+    </body>
+</html>
